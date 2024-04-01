@@ -20,6 +20,12 @@ const AnimationFunction = () => {
 };
 
 document.addEventListener("DOMContentLoaded", (e) => {
+	let splitText = Splitting();
+	splitText[0].words.forEach((e, idx) => {
+		// console.log(e);
+		e.dataset.aos = window.innerWidth < 1024 ? "zoom-in-up" : "zoom-in-right";
+		e.dataset.aosDelay = idx * (window.innerWidth < 1024 ? 50 : 100);
+	});
 	if (window.scrollY > 0) {
 		document.querySelector(".navbar").classList.add("py-4", "shadow-md");
 	} else {
