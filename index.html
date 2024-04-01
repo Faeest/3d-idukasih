@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta name="description" content="idukasih 3D" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+		<title>title</title>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="./assets/style.css" />
+	</head>
+	<body>
+		<div class="drawer">
+			<input id="sidebar-nav" type="checkbox" class="drawer-toggle" />
+			<div class="drawer-content flex flex-col gap-0">
+				<!-- Navbar -->
+				<div class="w-full transition-all z-[500] navbar justify-center lg:px-20 md:px-10 sticky top-0 bg-base-100">
+					<div class="container flex">
+						<div class="navbar-start">
+							<div class="text-xl btn btn-ghost no-animation rounded-sm">Title</div>
+						</div>
+						<div class="flex-nones navbar-end items-center flex gap-2">
+							<a aria-label="nav-link" href="#beranda" class="nav-links max-lg:hidden"><span class="text-2xl icon-[ic--round-home] lg:hidden"></span>Beranda</a>
+							<a aria-label="nav-link" href="#produk" class="nav-links max-lg:hidden"><span class="text-2xl icon-[iconoir--book-solid] lg:hidden"></span>Produk</a>
+							<a aria-label="nav-link" href="#tentang-saya" class="nav-links max-lg:hidden"><span class="text-2xl icon-[ic--person] lg:hidden"></span>Tentang saya</a>
+							<a aria-label="nav-link" href="#paket" class="nav-links max-lg:hidden"><span class="text-2xl icon-[fluent--box-24-filled] lg:hidden"></span>Paket</a>
+							<label for="sidebar-nav" aria-label="open sidebar" class="btn btn-circle btn-ghost lg:hidden">
+								<span class="icon-[heroicons-solid--menu-alt-3] text-2xl"></span>
+							</label>
+							<label class="swap swap-rotate btn btn-ghost btn-circle">
+								<input type="checkbox" data-toggle-theme="dark,lightdim" data-act-class="ACTIVECLASS" />
+								<span class="swap-on fill-current text-2xl icon-[ph--sun-duotone]"></span>
+								<span class="swap-off fill-current text-2xl icon-[ph--moon-duotone]"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<!-- Content -->
+				<div aria-colindex="1" aria-label="content" class="mt-0 pt-10" id="beranda">
+					<div class="bg-base-100 w-full">
+						<div class="container-content h-screen mt-0 flex md:px-20 justify-between flex-wrap lg:flex-row items-center font-bold"></div>
+					</div>
+				</div>
+				<footer class="footer transition-all bg-neutral-900 dark:bg-neutral-300 text-base-100">
+					<div class="container p-5 mx-auto flex sm:justify-between items-center justify-center max-sm:flex-col">
+						<div class="flex gap-1">
+							<a aria-label="Facebook" href="#home" class="btn btn-ghost btn-circle"
+								><span><span class="text-xl icon-[mdi--facebook]"></span></span
+							></a>
+							<a aria-label="Twitter" href="#home" class="btn btn-ghost btn-circle"
+								><span><span class="text-xl icon-[mdi--twitter]"></span></span
+							></a>
+							<a aria-label="Instagram" href="#home" class="btn btn-ghost btn-circle"
+								><span><span class="text-xl icon-[mdi--instagram]"></span></span
+							></a>
+							<a aria-label="Linkedin" href="#home" class="btn btn-ghost btn-circle"
+								><span><span class="text-xl icon-[mdi--linkedin]"></span></span
+							></a>
+						</div>
+						<div class="sm:text-lg max-sm:font-bold text-end text-wrap flex items-center gap-1"><span class="icon-[ic--baseline-copyright]"></span> 2024 copyright all right reserved</div>
+					</div>
+				</footer>
+			</div>
+			<!-- Sidebar -->
+			<div class="drawer-side z-50">
+				<label for="sidebar-nav" aria-label="close sidebar" class="drawer-overlay"></label>
+				<ul class="flex flex-col gap-2 p-8 w-80 max-w-full min-h-full bg-base-100 shadow-lg">
+					<li class="divider mb-0 mt-9"></li>
+				</ul>
+			</div>
+		</div>
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+		<script src="./assets/script.js"></script>
+	</body>
+</html>

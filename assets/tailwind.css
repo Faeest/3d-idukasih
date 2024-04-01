@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+	.container-content {
+		@apply container max-md:p-5 mx-auto my-20;
+	}
+	[aria-label="content"] {
+		@apply my-10 w-full flex-wrap gap-6 justify-center flex flex-col lg:flex-row mx-auto items-center text-center font-bold;
+	}
+	.base-links {
+		@apply btn btn-ghost aria-selected:text-neutral-900 dark:aria-selected:text-neutral-100 aria-selected:bg-slate-950/20 dark:aria-selected:bg-slate-50/10 aria-selected:font-semibold font-medium rounded-sm;
+	}
+	.nav-links {
+		@apply base-links text-base;
+	}
+	.drawer-links {
+		@apply base-links m-0 w-full justify-start;
+	}
+	.section-head {
+		@apply w-full flex flex-col md:px-20 gap-[2px] mb-8;
+	}
+	.section-head-name {
+		@apply w-fit text-3xl;
+	}
+	.section-head-divider {
+		@apply divider py-0 my-0 w-10 divider-primary;
+	}
+	.section-head-description {
+		@apply font-normal text-lg w-fit text-left;
+	}
+}
