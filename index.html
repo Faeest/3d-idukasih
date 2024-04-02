@@ -15,18 +15,22 @@
 		<link rel="stylesheet" href="./assets/style.css" />
 	</head>
 	<body>
+		<div id="loading" class="fixed bg-base-300 top-0 left-0 right-0 bottom-0 z-[99999] gap-5 sm:text-6xl text-4xl flex flex-col justify-center items-center">
+			<span class="loading loading-spinner w-20"></span>
+			<span class="font-semibold">Loading</span>
+		</div>
 		<div class="drawer">
 			<input id="sidebar-nav" type="checkbox" class="drawer-toggle" />
 			<div class="drawer-content flex flex-col gap-0">
 				<!-- Navbar -->
-				<div class="w-full transition-all z-[500] navbar justify-center lg:px-20 md:px-10 sticky top-0 bg-base-100">
+				<div class="w-full transition-all z-[500] navbar justify-center lg:px-20 md:px-10 sticky top-0 bg-base-100/75 backdrop-blur-lg">
 					<div class="container flex">
 						<div class="navbar-start">
-							<div class="text-xl btn btn-ghost no-animation rounded-sm">Title</div>
+							<div class="text-xl btn btn-ghost no-animation rounded-sm px-5">Title</div>
 						</div>
 						<div class="flex-nones navbar-end items-center flex gap-2">
 							<a aria-label="nav-link" href="#beranda" class="nav-links max-lg:hidden"><span class="text-2xl icon-[ic--round-home] lg:hidden"></span>Beranda</a>
-							<a aria-label="nav-link" href="#produk" class="nav-links max-lg:hidden"><span class="text-2xl icon-[iconoir--book-solid] lg:hidden"></span>Produk</a>
+							<a aria-label="nav-link" href="#section2" class="nav-links max-lg:hidden"><span class="text-2xl icon-[iconoir--book-solid] lg:hidden"></span>section2</a>
 							<a aria-label="nav-link" href="#tentang-saya" class="nav-links max-lg:hidden"><span class="text-2xl icon-[ic--person] lg:hidden"></span>Tentang saya</a>
 							<a aria-label="nav-link" href="#paket" class="nav-links max-lg:hidden"><span class="text-2xl icon-[fluent--box-24-filled] lg:hidden"></span>Paket</a>
 							<label for="sidebar-nav" aria-label="open sidebar" class="btn btn-circle btn-ghost lg:hidden">
@@ -42,16 +46,99 @@
 				</div>
 				<!-- Content -->
 				<div aria-colindex="1" aria-label="content" class="mt-0 md:pt-5" id="beranda">
-					<div class="bg-base-100 w-full">
+					<div class="bg-base-100 w-full overflow-hidden">
 						<div class="container-content relative gap-0 gap-y-10 mt-0 flex lg:px-10 flex-wrap lg:flex-row items-start font-bold">
-							<div class="lg:w-2/3 z-20 flex flex-col gap-16 bg-primary1 w-full lg:aspect-[225/179] pt-10">
-								<div data-splitting="words" class="lg:text-6xl text-4xl font-medium lg:text-left text-shadow"><span class="font-bold text-red-500 dark:text-red-400">Lorem</span> ipsum dolor sit amet <span class="font-bold text-amber-500 dark:text-amber-400">consectetur</span> adipisicing <span class="font-bold text-blue-500 dark:text-blue-400">elit</span>.</div>
-                                <div data-aos="zoom-in-up" data-aos-delay="800" class="w-fit"><a href="#" class="btn w-fit btn-lg dark:bg-teal-400 bg-teal-600 hover:bg-opacity-90 rounded px-10 text-base-300">Lorem</a></div>
+							<div class="lg:w-2/3 z-20 flex flex-col lg:gap-14 gap-5 w-full lg:items-start items-center lg:aspect-[225/179] pt-10">
+								<div data-splitting="words" class="sm:text-6xl text-4xl font-medium lg:text-left text-shadow max-lg:max-w-xl">
+									<span class="font-bold text-red-500 dark:text-red-400">Lorem</span> ipsum dolor <br class="max-sm:hidden" />
+									amet <span class="font-bold text-amber-500 dark:text-amber-400">consectetur </span> <br class="max-sm:hidden" />
+									adipisicing <span class="font-bold text-blue-500 dark:text-blue-400">elit</span>.
+								</div>
+								<div data-splitting="words" class="lg:text-2xl text-xl font-normal lg:text-left text-shadow max-w-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, beatae!</div>
+								<div data-aos="zoom-in-up" data-aos-anchor="#beranda" data-aos-delay="800" class="w-fit">
+									<a href="#" class="btn h-fit w-fit max-lg:text-xl py-4 items-center lg:btn-lg dark:bg-teal-400 bg-teal-600 hover:bg-teal-500 rounded px-10 lg:px-20 text-base-300">Lorem <span class="icon-[iconamoon--arrow-down-6-circle-fill]"></span></a>
+								</div>
 							</div>
-							<div class="lg:w-1/4 z-20 relative bg-accent1 grow w-full lg:aspect-[4/7] aspect-video">
-								<div data-aos="fade-up" data-aos-delay="300" class="z-10 lg:hidden grow w-full aspect-[225/179] bg-[url(/assets/images/hero.svg)] dark:bg-[url(/assets/images/hero-dark.svg)] bg-no-repeat bg-top bg-contain"></div>
+							<div class="lg:w-1/4 z-20 relative grow w-full lg:aspect-[4/7] aspect-video">
+								<div data-aos="fade-up" data-aos-anchor="#beranda" data-aos-delay="300" class="lg:hidden grow w-full aspect-[225/179] bg-[url(/assets/images/hero.svg)] dark:bg-[url(/assets/images/hero-dark.svg)] bg-no-repeat bg-top bg-contain"></div>
 							</div>
-							<div data-aos="fade-up" data-aos-delay="300" class="w-[calc(66.666%_-_40px)] z-10 absolute right-[40px] bottom-[10%] lg:bottom-0 grow aspect-[225/179] bg-[url(/assets/images/hero.svg)] dark:bg-[url(/assets/images/hero-dark.svg)] bg-no-repeat bg-top bg-contain max-lg:hidden"></div>
+							<div data-aos="fade-up" data-aos-anchor="#beranda" data-aos-delay="300" class="w-[calc(66.666%_-_40px)] z-10 absolute right-[-40px] bottom-0 grow aspect-[225/179] bg-[url(/assets/images/hero.svg)] dark:bg-[url(/assets/images/hero-dark.svg)] bg-no-repeat bg-top bg-contain max-lg:hidden"></div>
+						</div>
+					</div>
+				</div>
+				<div aria-colindex="2" aria-label="content" class="mt-0" id="section2">
+					<div class="bg-base-200 w-full overflow-hidden">
+						<div class="container-content px-5 py-20 pb-10 gap-0 gap-y-10 mt-0 flex lg:px-10 flex-wrap lg:flex-row items-start font-bold">
+							<div class="section-title flex flex-col w-full">
+								<div class="sm:text-5xl text-2xl w-full text-left">Lorem, ipsum.</div>
+								<div class="divider my-0 py-0 divider-primary w-32"></div>
+							</div>
+							<div class="flex md:flex-row flex-col w-full gap-x-10 gap-y-2 flex-wrap justify-center text-base font-normal">
+								<div class="md:w-1/4 grow text-left max-md:text-xl text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, blanditiis?</div>
+								<div class="w-1/4 max-md:hidden grow text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, blanditiis?</div>
+								<div class="md:w-1/4 grow flex justify-end items-start">
+									<a href="#" target="_blank" class="btn btn-ghost flex">
+										<span>Lorem ipsum dolor sit. </span>
+										<span class="icon-[mdi--arrow-top-right] text-lg"></span>
+									</a>
+								</div>
+							</div>
+							<div class="flex w-full gap-5 flex-wrap justify-center text-base font-normal">
+								<div class="card-2 w-1/4">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+								<div class="card-2 w-1/4">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+								<div class="card-2 w-1/4">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+								<div class="card-2 w-2/5">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+								<div class="card-2 w-1/4">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+								<div class="card-2 w-1/4">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -79,7 +166,7 @@
 			<div class="drawer-side z-50">
 				<label for="sidebar-nav" aria-label="close sidebar" class="drawer-overlay"></label>
 				<ul class="flex flex-col gap-2 p-8 w-80 max-w-full min-h-full bg-base-100 shadow-lg">
-					<li class="divider mb-0 mt-9"></li>
+					<li class="divider mb-0 mt-9 opacity-0"></li>
 				</ul>
 			</div>
 		</div>

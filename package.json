@@ -7,7 +7,7 @@
 	},
 	"type": "module",
 	"scripts": {
-		"dev": "npx tailwindcss -i ./assets/tailwind.css -o ./assets/style.css --watch",
+		"dev": "npx tailwindcss -m -i ./assets/tailwind.css -o ./assets/style.css --watch",
 		"build": "node build main"
 	},
 	"devDependencies": {

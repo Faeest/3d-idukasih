@@ -7,11 +7,18 @@
         /* first layer at 1px */ -1px -1px 0px var(--text-shadow), 0px -1px 0px var(--text-shadow), 1px -1px 0px var(--text-shadow), -1px 0px 0px var(--text-shadow), 1px 0px 0px var(--text-shadow), -1px 1px 0px var(--text-shadow), 0px 1px 0px var(--text-shadow), 1px 1px 0px var(--text-shadow), /* second layer at 2px */ -2px -2px 0px var(--text-shadow), -1px -2px 0px var(--text-shadow), 0px -2px 0px var(--text-shadow), 1px -2px 0px var(--text-shadow), 2px -2px 0px var(--text-shadow), 2px -1px 0px var(--text-shadow), 2px 0px 0px var(--text-shadow), 2px 1px 0px var(--text-shadow), 2px 2px 0px var(--text-shadow), 1px 2px 0px var(--text-shadow), 0px 2px 0px var(--text-shadow), -1px 2px 0px var(--text-shadow), -2px 2px 0px var(--text-shadow), -2px 1px 0px var(--text-shadow), -2px 0px 0px var(--text-shadow), -2px -1px 0px var(--text-shadow);
 }
 @layer components {
+	.effect-3d {
+		box-shadow: 6px 6px oklch(var(--bc));
+		@apply outline-base-content;
+	}
+	.card-2 {
+		@apply outline-1 outline-base-content/10 outline card min-w-56 max-w-full grow bg-base-100 shadow-xl rounded-md hover:effect-3d hover:translate-x-[-3px] hover:translate-y-[-3px] transition z-10 hover:z-[9];
+	}
 	.splitting .word {
 		animation: slide-in 0.5s cubic-bezier(0.5, 0, 0.5, 1) both;
 		animation-delay: calc(100ms * var(--word-index));
 	}
-	@keyframes slide-in {	
+	@keyframes slide-in {
 		from {
 			transform: translateY(1em) scale(1);
 			opacity: 0;
@@ -21,7 +28,7 @@
 		@apply container max-md:p-5 mx-auto my-20;
 	}
 	[aria-label="content"] {
-		@apply my-10 w-full flex-wrap gap-6 justify-center flex flex-col lg:flex-row mx-auto items-center text-center font-bold;
+		@apply w-full flex-wrap gap-6 justify-center flex flex-col lg:flex-row mx-auto items-center text-center font-bold;
 	}
 	.base-links {
 		@apply btn btn-ghost aria-selected:text-neutral-900 dark:aria-selected:text-neutral-100 aria-selected:bg-slate-950/20 dark:aria-selected:bg-slate-50/10 aria-selected:font-semibold font-medium rounded-sm;
@@ -31,17 +38,5 @@
 	}
 	.drawer-links {
 		@apply base-links m-0 w-full justify-start lg:text-sm text-base;
-	}
-	.section-head {
-		@apply w-full flex flex-col md:px-20 gap-[2px] mb-8;
-	}
-	.section-head-name {
-		@apply w-fit text-3xl;
-	}
-	.section-head-divider {
-		@apply divider py-0 my-0 w-10 divider-primary;
-	}
-	.section-head-description {
-		@apply font-normal text-lg w-fit text-left;
 	}
 }
