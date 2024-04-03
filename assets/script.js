@@ -40,12 +40,11 @@ const AnimationFunction = () => {
 	const sectionArray = document.querySelectorAll("[aria-label='content']");
 	const sectionPosition = {};
 	const offset = document.querySelector(".navbar").offsetHeight;
-	sectionArray.forEach((section) => (sectionPosition[section.id] = section.offsetTop - 64));
-	console.log(sectionPosition);
+	sectionArray.forEach((section) => (sectionPosition[section.id] = section.offsetTop - offset));
 	const updateNav = () => {
 		let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 		for (id in sectionPosition) {
-			if (sectionPosition[id] - offset <= scrollPosition) {
+			if (sectionPosition[id] <= scrollPosition) {
 				document.querySelectorAll("a[class*='-links'],a[class^='-links']").forEach((e) => {
 					e.ariaSelected = false;
 				});
@@ -59,7 +58,25 @@ const AnimationFunction = () => {
 	window.onscroll = updateNav;
 };
 document.addEventListener("DOMContentLoaded", (e) => {
-	SplitAnimation(true);
+	new InfiniteMarquee({
+		element: ".marquee-container",
+		speed: 7500,
+		smoothEdges: true,
+		direction: "right",
+		spaceBetween: '20px',
+		duplicateCount: 5,
+		on: {
+			beforeInit: () => {
+				console.log("Not Yet Initialized");
+			},
+
+			afterInit: () => {
+				console.log("Initialized");
+			},
+		},
+	});
+
+	SplitAnimation(false);
 	if (window.scrollY > 0) {
 		document.querySelector(".navbar").classList.add("py-4", "shadow-md");
 	} else {
@@ -79,7 +96,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 			const targetId = this.getAttribute("href").substring(1);
 			const targetElement = document.getElementById(targetId);
 			let offset = document.querySelector(".navbar").offsetHeight;
-			// console.log(offset, (targetElement ?? document.body).offsetTop - offset);
+			// console.f(offset, (targetElement ?? document.body).offsetTop - offset);
 			document.querySelector("#sidebar-nav").checked = false;
 			window.scrollTo({
 				top: (targetElement ?? document.body).offsetTop - offset,
@@ -113,8 +130,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
 	if (window.localStorage.getItem("theme") != "lightdim") {
 		document.querySelector("[data-toggle-theme]").checked = true;
 	}
-	AnimationFunction();
 	document.querySelector(`a[href="${window.location.hash}"`) && (document.querySelector(`a[href="${window.location.hash}"`).ariaSelected = true);
+	AnimationFunction();
 });
 
 // Scroll up function
