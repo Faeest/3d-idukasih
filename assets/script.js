@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 		},
 	});
 
-	SplitAnimation(false);
+	SplitAnimation(true);
 	if (window.scrollY > 0) {
 		document.querySelector(".navbar").classList.add("py-4", "shadow-md");
 	} else {
