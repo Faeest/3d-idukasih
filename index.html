@@ -6,12 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
 		<title>title</title>
-		<link rel="stylesheet" href="./assets/aos.css" />
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="./assets/splitting.css" />
-		<link rel="stylesheet" href="./assets/splitting-cells.css" />
+		<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+		<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
 		<link rel="stylesheet" href="./assets/marquee.css" />
 		<link rel="stylesheet" href="./assets/style.css" />
 	</head>
@@ -47,23 +47,231 @@
 					</div>
 				</div>
 				<!-- Content -->
-				<div aria-colindex="1" aria-label="content" class="mt-0" id="beranda">
+				<div aria-colindex="1" aria-label="content" class="mt-0 md:pt-5" id="beranda">
 					<div class="bg-base-100 w-full overflow-hidden">
-						<div class="container-content flex flex-wrap gap-10 relative pb-20">
-							<div data-splitting class="font-bold text-7xl w-full pb-10 z-10">Lorem, ipsum dolor.</div>
-							<div class="w-full font-medium text-xl z-10 flex">
-								<div data-splitting='lines' class="max-w-xl w-full text-left">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos nulla porro inventore nihil obcaecati. Quisquam temporibus eos doloremque aperiam.</div>
-							</div>
-							<div class="w-full font-medium text-xl flex z-10">
-								<div class="btn group btn-wide flex justify-center items-center py-3 border-2 h-auto btn-outline btn-primary hover:!text-base-100 text-lg font-semibold">
-									<span>Lorem.</span>
-									<span class="group-hover:animate-[bounce-2_1s_infinite] icon-[mingcute--down-fill]"></span>
+						<div class="container-content relative gap-0 gap-y-10 mt-0 flex lg:px-10 flex-wrap lg:flex-row items-start font-bold">
+							<div class="lg:w-2/3 z-20 flex flex-col lg:gap-14 gap-5 w-full lg:items-start items-center lg:aspect-[225/179] pt-10">
+								<div data-splitting="words" class="sm:text-6xl text-4xl font-medium lg:text-left text-shadow max-lg:max-w-xl">
+									<span class="font-bold text-red-500 dark:text-red-400">Lorem</span> ipsum dolor <br class="max-sm:hidden" />
+									amet <span class="font-bold text-amber-500 dark:text-amber-400">consectetur </span> <br class="max-sm:hidden" />
+									adipisicing <span class="font-bold text-blue-500 dark:text-blue-400">elit</span>.
+								</div>
+								<div data-splitting="words" class="lg:text-2xl text-xl font-normal lg:text-left text-shadow max-w-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, beatae!</div>
+								<div data-aos="zoom-in-up" data-aos-anchor="#beranda" data-aos-delay="800" class="w-fit">
+									<a href="#" class="btn h-fit w-fit max-lg:text-xl py-4 items-center lg:btn-lg dark:bg-teal-400 bg-teal-600 hover:bg-teal-500 rounded px-10 lg:px-20 text-base-300">Lorem <span class="icon-[iconamoon--arrow-down-6-circle-fill]"></span></a>
 								</div>
 							</div>
-							<div data-aos="fade-up" data-aos-delay="100" class="z-0 absolute bottom-[0%] right-[5%] origin-center"><div class="bg-[url(/assets/images/hero-man.svg)] dark:bg-[url(/assets/images/hero-man-dark.svg)] aspect-[1/3] w-32 bg-no-repeat bg-center bg-contain"></div></div>
-							<div data-aos="fade-up" data-aos-easing="ease-out-back" data-aos-delay="300" class="z-0 absolute top-[25%] right-[40%] origin-center"><div class="bg-[url(/assets/images/hero-section-1.svg)] dark:bg-[url(/assets/images/hero-section-1-dark.svg)] aspect-[1/2] w-32 bg-no-repeat bg-center bg-contain animate-[30s_levitate-1_infinite_linear]"></div></div>
-							<div data-aos="fade-up" data-aos-easing="ease-out-back" data-aos-delay="400" class="z-0 absolute top-[20%] right-[24%] origin-center"><div class="bg-[url(/assets/images/hero-section-2.svg)] dark:bg-[url(/assets/images/hero-section-2-dark.svg)] aspect-[1/2] w-32 bg-no-repeat bg-center bg-contain animate-[35s_levitate-2_infinite_linear]"></div></div>
-							<div data-aos="fade-up" data-aos-easing="ease-out-back" data-aos-delay="500" class="z-0 absolute top-[80%] right-[30%] origin-center"><div class="bg-[url(/assets/images/hero-section-3.svg)] dark:bg-[url(/assets/images/hero-section-3-dark.svg)] aspect-video w-32 bg-no-repeat bg-center bg-contain animate-[40s_levitate-3_infinite_linear]"></div></div>
+							<div class="lg:w-1/4 z-20 relative grow w-full lg:aspect-[4/7] aspect-video">
+								<div data-aos="fade-up" data-aos-anchor="#beranda" data-aos-delay="300" class="lg:hidden grow w-full aspect-[225/179] bg-[url(/assets/images/hero.svg)] dark:bg-[url(/assets/images/hero-dark.svg)] bg-no-repeat bg-top bg-contain"></div>
+							</div>
+							<div data-aos="fade-up" data-aos-anchor="#beranda" data-aos-delay="300" class="w-[calc(66.666%_-_40px)] z-10 absolute right-[-40px] bottom-0 grow aspect-[225/179] bg-[url(/assets/images/hero.svg)] dark:bg-[url(/assets/images/hero-dark.svg)] bg-no-repeat bg-top bg-contain max-lg:hidden"></div>
+						</div>
+						<div data-aos="fade-zoom-in" class="marquee-container p-10 container-content">
+							<div class="bg-[url(https://fakeimg.pl/600x400)] opacity-60 rounded aspect-video w-60 bg-center bg-cover"></div>
+						</div>
+					</div>
+				</div>
+				<div aria-colindex="2" aria-label="content" class="mt-0" id="section2">
+					<div class="bg-base-200 w-full overflow-hidden">
+						<div class="container-content px-5 py-20 pb-10 gap-0 sm:gap-y-10 mt-0 flex lg:px-10 flex-wrap lg:flex-row items-start font-bold">
+							<div class="section-title flex flex-col w-full">
+								<div data-aos="fade-up" class="sm:text-5xl text-2xl w-full text-left">Section 2</div>
+								<div data-aos="fade-up" data-aos-delay="100" class="divider my-0 py-0 divider-primary w-32"></div>
+							</div>
+							<div class="max-sm:pt-5 flex md:flex-row flex-col w-full gap-x-10 gap-y-2 flex-wrap justify-center text-base font-normal">
+								<div data-aos="fade-up" class="md:w-1/4 grow text-left max-md:text-xl text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, blanditiis?</div>
+								<div data-aos="fade-up" data-aos-delay="100" class="w-1/4 max-md:hidden grow text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, blanditiis?</div>
+								<div data-aos="fade-up" data-aos-delay="200" class="md:w-1/4 grow flex justify-end items-start">
+									<a href="#" target="_blank" class="btn btn-ghost flex">
+										<span>Lorem ipsum dolor sit. </span>
+										<span class="icon-[mdi--arrow-top-right] text-lg"></span>
+									</a>
+								</div>
+							</div>
+							<!-- Cards -->
+							<div class="flex w-full gap-5 flex-wrap justify-center text-base font-normal">
+								<div data-aos="fade-up" data-aos-delay="0" class="card-2 w-1/4">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="100" class="card-2 w-1/4">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="200" class="card-2 w-1/4">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="0" class="card-2 w-2/5">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="100" class="card-2 w-1/4">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="200" class="card-2 w-1/4">
+									<div class="card-body">
+										<h2 class="card-title">Card title!</h2>
+										<p class="text-left">If a dog chews shoes whose shoes does he choose?</p>
+										<div class="card-actions justify-end">
+											<button class="btn btn-primary">Buy Now</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div aria-colindex="3" aria-label="content" class="mt-0" id="section3">
+					<div class="bg-base-100 w-full overflow-hidden">
+						<div class="container-content px-5 py-20 pb-10 gap-14 sm:gap-y-10 mt-0 flex lg:px-10 flex-wrap lg:flex-row items-stretch font-bold">
+							<div class="lg:w-1/3 w-full flex justify-between flex-col gap-10">
+								<div class="section-title flex flex-col w-full">
+									<div data-aos="fade-up" class="sm:text-5xl text-2xl w-full text-left">Section 3</div>
+									<div data-aos="fade-up" data-aos-delay="100" class="divider my-0 py-0 divider-primary w-32"></div>
+									<div data-aos="fade-up" data-aos-delay="200" class="sm:text-3xl text-xl w-full text-left font-medium">Lorem ipsum dolor sit amet.</div>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="300" class="lg:inline rounded aspect-[3/4] hidden bg-[url(https://fakeimg.pl/450x800?font=bebas)] bg-center bg-cover"></div>
+							</div>
+							<div class="lg:w-1/3 grow h-full w-full flex flex-wrap gap-5">
+								<div data-aos="fade-up" data-aos-delay="0" class="card-3">
+									<div class="card-3-title">
+										<div class="md:text-2xl text-xl text-left flex items-end font-semibold">Card title 2!</div>
+										<span class="icon-[icon-park-twotone--connect] lg:text-6xl text-4xl"></span>
+									</div>
+									<p class="text-left font-normal">If a dog chews shoes whose shoes does he choose? If a dog chews shoes whose shoes does he choose?</p>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="100" class="card-3">
+									<div class="card-3-title">
+										<div class="md:text-2xl text-xl text-left flex items-end font-semibold">Card title 2!</div>
+										<span class="icon-[icon-park-twotone--connect] lg:text-6xl text-4xl"></span>
+									</div>
+									<p class="text-left font-normal">If a dog chews shoes whose shoes does he choose? If a dog chews shoes whose shoes does he choose?</p>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="0" class="card-3">
+									<div class="card-3-title">
+										<div class="md:text-2xl text-xl text-left flex items-end font-semibold">Card title 2!</div>
+										<span class="icon-[icon-park-twotone--connect] lg:text-6xl text-4xl"></span>
+									</div>
+									<p class="text-left font-normal">If a dog chews shoes whose shoes does he choose? If a dog chews shoes whose shoes does he choose?</p>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="100" class="card-3">
+									<div class="card-3-title">
+										<div class="md:text-2xl text-xl text-left flex items-end font-semibold">Card title 2!</div>
+										<span class="icon-[icon-park-twotone--connect] lg:text-6xl text-4xl"></span>
+									</div>
+									<p class="text-left font-normal">If a dog chews shoes whose shoes does he choose? If a dog chews shoes whose shoes does he choose?</p>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="0" class="card-3 max-md:hidden">
+									<div class="card-3-title">
+										<div class="md:text-2xl text-xl text-left flex items-end font-semibold">Card title 2!</div>
+										<span class="icon-[icon-park-twotone--connect] lg:text-6xl text-4xl"></span>
+									</div>
+									<p class="text-left font-normal">If a dog chews shoes whose shoes does he choose? If a dog chews shoes whose shoes does he choose?</p>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="100" class="card-3 max-md:hidden">
+									<div class="card-3-title">
+										<div class="md:text-2xl text-xl text-left flex items-end font-semibold">Card title 2!</div>
+										<span class="icon-[icon-park-twotone--connect] lg:text-6xl text-4xl"></span>
+									</div>
+									<p class="text-left font-normal">If a dog chews shoes whose shoes does he choose? If a dog chews shoes whose shoes does he choose?</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div aria-colindex="4" aria-label="content" class="mt-0" id="section4">
+					<div class="bg-base-200 w-full overflow-hidden">
+						<div class="container-content px-5 py-20 pb-10 gap-14 sm:gap-y-10 mt-0 flex lg:px-10 flex-wrap lg:flex-row font-bold">
+							<div class="w-full flex flex-wrap gap-5">
+								<div class="lg:w-1/3 grow flex flex-col gap-5">
+									<div class="section-title flex flex-col w-full">
+										<div data-aos="fade-up" class="sm:text-5xl text-2xl w-full text-left">Section 4</div>
+										<div data-aos="fade-up" data-aos-delay="100" class="divider my-0 py-0 divider-primary w-32"></div>
+									</div>
+									<div data-aos="fade-up" class="text-left font-normal">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam officia tenetur quibusdam beatae nesciunt minima ea eum deleniti quis quae.</div>
+									<ul data-aos="fade-up" data-aos-delay="100" class="font-normal flex flex-col gap-2 *:flex *:items-start *:justify-start *:gap-2">
+										<li data-aos="fade-up" data-aos-delay="100">
+											<span class="mt-1 text-success aspect-square icon-[icon-park-twotone--check-one]"></span>
+											<span class="text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem accusantium voluptatem distinctio laboriosam! Voluptatum qui aliquam quo dolore sit.</span>
+										</li>
+										<li data-aos="fade-up" data-aos-delay="150">
+											<span class="mt-1 text-success aspect-square icon-[icon-park-twotone--check-one]"></span>
+											<span class="text-left">Lorem ipsum dolor sit amet.</span>
+										</li>
+										<li data-aos="fade-up" data-aos-delay="200">
+											<span class="mt-1 text-success aspect-square icon-[icon-park-twotone--check-one]"></span>
+											<span class="text-left">Lorem ipsum dolor sit amet.</span>
+										</li>
+										<li data-aos="fade-up" data-aos-delay="150">
+											<span class="mt-1 text-success aspect-square icon-[icon-park-twotone--check-one]"></span>
+											<span class="text-left">Lorem ipsum dolor sit amet.</span>
+										</li>
+									</ul>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="100" class="lg:w-1/3 w-full shrink max-lg:aspect-video rounded bg-[url(https://fakeimg.pl/450x800?font=bebas)] bg-center bg-cover shadow"></div>
+								<div data-aos="fade-up" data-aos-delay="100" class="pt-10 w-full text-left font-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas alias distinctio vero iusto, saepe voluptatem ipsam amet nemo veniam? Cum odio fuga, adipisci eveniet porro placeat officiis, vitae aliquam quae sapiente error, iste dignissimos quidem reiciendis! Voluptas velit necessitatibus quidem?</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div aria-colindex="5" aria-label="content" class="mt-0" id="section5">
+					<div class="bg-base-100 w-full overflow-hidden">
+						<div class="container-content px-5 py-20 pb-10 gap-14 sm:gap-y-10 mt-0 flex lg:px-10 flex-wrap lg:flex-row items-stretch font-bold">
+							<div class="section-title flex flex-col w-full">
+								<div data-aos="fade-up" class="sm:text-5xl text-2xl w-full text-left">Section 5</div>
+								<div data-aos="fade-up" data-aos-delay="100" class="divider my-0 py-0 divider-primary w-32"></div>
+							</div>
+							<div class="w-full flex lg:flex-row flex-col gap-10">
+								<form data-aos="fade-up" action="#" method="get" class="lg:w-1/3 grow p-5 rounded shadow-xl card grid grid-flow-row grid-cols-2 gap-5">
+									<input type="text" placeholder="Type here" class="rounded lg:h-auto input input-bordered col-span-2 row-auto grow min-w-28" />
+									<input type="text" placeholder="Type here" class="rounded lg:h-auto input input-bordered col-span-2 row-auto grow min-w-28" />
+									<input type="text" placeholder="Type here" class="rounded lg:h-auto input input-bordered col-span-2 row-auto grow min-w-28" />
+									<textarea class="textarea resize-none textarea-bordered w-full rounded row-span-6 col-span-2" placeholder="Type here"></textarea>
+									<input type="submit" value="Submit" class="w-full rounded btn btn-primary text-base-100 row-auto col-span-2" />
+								</form>
+								<div data-aos="fade-up" data-aos-delay="400" class="lg:w-1/12 shrink flex lg:flex-col justify-center items-center gap-5">
+									<a href="#" class="btn btn-outline text-2xl btn-circle"><span class="icon-[mdi--youtube]"></span></a>
+									<a href="#" class="btn btn-outline text-2xl btn-circle"><span class="icon-[ri--instagram-fill]"></span></a>
+									<a href="#" class="btn btn-outline text-2xl btn-circle"><span class="icon-[mdi--linkedin]"></span></a>
+								</div>
+								<div data-aos="fade-up" data-aos-delay="100" class="card lg:w-1/3 grow rounded bg-base-100 shadow-xl">
+									<figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+									<div class="card-body">
+										<div class="card-title">Shoes!</div>
+										<div class="text-left font-normal">If a dog chews shoes whose shoes does he choose?</div>
+										<div class="card-actions justify-end pt-3">
+											<button class="btn btn-primary text-base-100 rounded w-full">Buy Now</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -95,9 +303,9 @@
 				</ul>
 			</div>
 		</div>
-		<script src="./assets/aos.js"></script>
-		<script src="./assets/splitting.min.js"></script>
-		<script src="./assets/theme.js"></script>
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 		<script src="./assets/marquee.js"></script>
 		<script src="./assets/script.js"></script>
 	</body>

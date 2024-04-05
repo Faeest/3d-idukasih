@@ -9,30 +9,19 @@ window.mobileAndTabletCheck = function () {
 	return check;
 };
 const SplitAnimation = (prod) => {
-	let splitText = Splitting();
-	if (!prod || splitText.length <= 0) {
+	if (!prod) {
 		document.querySelector("#loading")?.remove?.();
 		AOS?.init?.({ anchorPlacement: "top-bottom" });
 		return;
 	}
-	console.log(splitText);
+	let splitText = Splitting();
 	splitText[0].words.forEach((e, idx) => {
-		e.classList.add("overflow-hidden", "py-2");
+		e.dataset.aos = window.innerWidth < 1024 ? "fade-up" : "zoom-in-right";
+		e.style.transitionDelay = idx * 50 * 0.001 + "s";
 	});
-	splitText[0].chars.forEach((e, idx) => {
-		e.dataset.aos = "fade-blur-up";
-		e.dataset.aosEasing = "ease-out-back";
-		e.style.transitionDelay = idx * 0.02 + "s";
-	});
-	splitText[1].lines.forEach((e, idx) => {
-		e.forEach((ee, idx2) => {
-			console.log(idx, idx2);
-			ee.style.animation = null;
-			ee.classList.add("!animate-none");
-			ee.dataset.aos = "fade-up";
-			// ee.dataset.aosEasing = "ease-out-back";
-			ee.style.transitionDelay = idx2 * 0.05 + "s";
-		});
+	splitText[1].words.forEach((e, idx) => {
+		e.dataset.aos = window.innerWidth < 1024 ? "fade-up" : "fade-right";
+		e.style.transitionDelay = (400 + idx * 15) * 0.001 + "s";
 	});
 	let frameTime = 0;
 	splitText.forEach((e) => {
@@ -44,7 +33,7 @@ const SplitAnimation = (prod) => {
 			document.querySelector("#loading")?.remove?.();
 			AOS?.init?.({ anchorPlacement: "top-bottom" });
 		},
-		mobileAndTabletCheck() ? frameTime : frameTime / 2
+		mobileAndTabletCheck() ? frameTime : 0
 	);
 };
 const AnimationFunction = () => {
@@ -74,7 +63,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 		speed: 7500,
 		smoothEdges: true,
 		direction: "right",
-		spaceBetween: "20px",
+		spaceBetween: '20px',
 		duplicateCount: 5,
 		on: {
 			beforeInit: () => {
